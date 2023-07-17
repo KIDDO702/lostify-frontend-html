@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lostify</title>
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100;1,300;1,400;1,500&display=swap" 
+    rel="stylesheet">
+
+    <!-- customcss -->
+    <link rel="stylesheet" href="css/style.css">
+
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-primaryLight">
+    <nav class="bg-darkBlue">
+        <div class="container flex justify-between items-center py-2">
+            <div class="w-[60px]">
+                <a href="index.html">
+                    <img src="img/logo.jpg" alt="logo" class="w-full rounded">
+                </a>
+            </div>
+            <div class="flex items-center space-x-5">
+                <div>
+                    <a href="#" class="font-semibold text-customYellow hover:text-lightBlue">
+                        Report a lost item
+                    </a>
+                </div>
+                <div>
+                    <a href="register.html" class="bg-customYellow p-2 text-customBlue flex items-center rounded">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9" />
+                        </svg>
+                        <span class="ml-2">
+                            Register
+                        </span>
+                    </a>
+                </div>
+                <div>
+                    <a href="login.html" class="bg-lightBlue p-2 text-customBlue rounded">
+                        <i class="fa-solid fa-user-plus"></i> <span class="ml-2">Sign Up</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <section>
+        <div class="relative">
+            <img src="img/hero.jpg" alt="hero-header">
+            <div class="absolute inset-0 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                <div class="mx-auto text-center">
+                    <div>
+                        <h3 class="bg-clip-text text-transparent bg-gradient-to-r from-customYellow via-primaryLight to-lightBlue text-7xl uppercase font-extrabold tracking-[5px]">Lostify</h3>
+                        <p class="text-customYellow uppercase font-light">Rediscover Your Lost World!</p>
+                    </div>
+                    <p class="mt-5 text-primaryLight text-lg text-center"> Are you tired of searching high and low for your lost belongings? Look no further! Lostify is your ultimate lost and found destination, where rediscovery awaits you. </p>
+                </div>
+                <div class="mt-5">
+                    <form action="#" class="mx-auto w-[850px]">
+                        <div class="w-full flex">
+                            <input type="text" placeholder="Search" class="w-full p-3.5 focus:outline-none">
+                            <button class="bg-customYellow text-darkBlue p-3">
+                                <i class="fa-solid fa-magnifying-glass text-xl"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- tailwindcss config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primaryLight: '#f4f9fc',
+                        darkBlue: '#101c42',
+                        customYellow: '#f6a530',
+                        lightBlue: '#00bbde'
+                    },
+                    container: {
+                        center: true,
+                    }
+                },
+                fontFamily: {
+                    body: ['Poppins', 'Roboto', 'sans-serif']
+                }
+            }
+        }
+    </script>
+</body>
+</html>

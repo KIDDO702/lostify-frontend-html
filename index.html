@@ -22,16 +22,14 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
 
+    <!-- splide-css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
 
     <!-- customcss -->
     <link rel="stylesheet" href="css/style.css">
-
-
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-primaryLight">
-    <nav class="bg-darkBlue px-2.5 lg:px-0 sticky top-0 z-10" x-data="{ sidebar:false }">
+    <nav class="bg-darkBlue px-2.5 lg:px-0 sticky top-0 z-20" x-data="{ sidebar:false }">
         <div class="container flex justify-between items-center py-2">
             <div class="w-[40px] lg:w-[4%]">
                 <a href="index.html">
@@ -123,9 +121,9 @@
     </section>
 
     <section class="w-full my-20">
-        <div class="container flex  space-x-10  lg:px-3">
-            <div class="bg-blue-100 border border-blue-200 w-[20%] h-fit rounded p-5">
-                <ul class="space-y-3 divide-y divide-blue-200" x-data="{ openCategory: null }">
+        <div class="container lg:flex px-3  lg:space-x-10  lg:px-3">
+            <div class="bg-blue-100 border border-blue-200 h-fit rounded z-10 sticky top-16 lg:w-[20%] lg:p-5">
+                <ul class="hidden space-y-3 divide-y divide-blue-200 mt-1 lg:block" x-data="{ openCategory: null }">
                     <li class="w-full py-1" x-on:mouseenter="openCategory = 'category1'" x-on:mouseleave="openCategory = null">
                         <div class="">
                             <a href="#" class="w-full flex items-center justify-between hover:text-darkBlue">
@@ -284,120 +282,462 @@
                         </a>
                     </li>
                 </ul>
+
+
+                <div class="p-3 lg:hidden">
+                    <label for="categories" class="block mb-2 text-sm font-medium text-gray-900">Select an option</label>
+                    <select id="categories" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 ">
+                        <option selected>All</option>
+                        <option value="US">
+                           Electronics 
+                        </option>
+                        <option value="CA">Jewelry</option>
+                        <option value="FR">Money</option>
+                        <option value="DE">Documents</option>
+                        <option value="#">Keys</option>
+                        <option value="#">Bags</option>
+                        <option value="#">Clothes</option>
+                        <option value="#">Accecories</option>
+                        <option value="#">Pets</option>
+                        <option value="#">Sports & Outdoor</option>
+                    </select>
+                </div>
             </div>
 
-            <div class="w-[80%] grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-                <div class="border-2 bg-white drop-shadow border-blue-200">
-                    <div class="relative">
-                        <img src="img/phone-1.jpg" alt="phone-1">
-                        <div class="absolute inset-0 bg-darkBlue bg-opacity-25"></div>
-                    </div>
-                    <div class="px-4 py-6">
-                        <h2 class="text-xl font-semibold uppercase">Microsoft Surface Pro</h2>
-                        <div class="my-5">
-                            <h3 class="text-xs font-light text-primaryLight mt-2">
-                                <span class="bg-darkBlue px-2 py-0.5 rounded-full">Electronics</span> 
-                                <span class="bg-lightBlue px-2 py-0.5 rounded-full ml-1">phones</span>
-                            </h3>
-                            <h4 class="mt-2 font-light text-gray-500 text-lg">Kisumu</h4>
+            <div class="w-full mt-5 lg:w-[80%] lg:px-0 lg:mt-0">
+                <div class="w-full grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <div class="border-2 bg-white drop-shadow border-blue-200 h-fit w-[]">
+                        <div class="relative">
+                            <img src="img/phone-1.jpg" alt="phone-1">
+                            <div class="absolute inset-0 bg-darkBlue bg-opacity-25"></div>
                         </div>
-                        <div class="mt-7">
-                            <a href="#" class="bg-lightBlue text-primaryLight font-semiBold rounded-md text-lg px-3 py-2 hover:bg-darkBlue">Claim</a>
+                        <div class="px-4 py-6">
+                            <h2 class="text-xl font-semibold uppercase">Microsoft Surface Pro</h2>
+                            <div class="my-5">
+                                <h3 class="text-xs font-light text-primaryLight mt-2">
+                                    <span class="bg-darkBlue px-2 py-0.5 rounded-full">Electronics</span>
+                                    <span class="bg-lightBlue px-2 py-0.5 rounded-full ml-1">phones</span>
+                                </h3>
+                                <div class="mt-3 flex items-center justify-between">
+                                    <h4 class="font-light text-gray-500 text-sm flex items-center">
+                                        <i class="fa-sharp fa-solid fa-location-dot"></i>
+                                        <span class="ml-1">Kisumu</span>
+                                    </h4>
+                    
+                                    <h4>
+                                        <i class="fa-sharp fa-regular fa-clock text-customYellow text-sm"></i>
+                                        <span class="ml-1 text-sm font-light text-gray-500">3 hours ago</span>
+                                    </h4>
+                                </div>
+                            </div>
+                            <div class="mt-7">
+                                <a href="#"
+                                    class="bg-lightBlue text-primaryLight font-semiBold rounded-md text-base px-3 py-2 hover:bg-darkBlue">Claim</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="border-2 bg-white drop-shadow border-blue-200 h-fit w-[]">
+                        <div class="relative">
+                            <img src="img/phone-1.jpg" alt="phone-1">
+                            <div class="absolute inset-0 bg-darkBlue bg-opacity-25"></div>
+                        </div>
+                        <div class="px-4 py-6">
+                            <h2 class="text-xl font-semibold uppercase">Microsoft Surface Pro</h2>
+                            <div class="my-5">
+                                <h3 class="text-xs font-light text-primaryLight mt-2">
+                                    <span class="bg-darkBlue px-2 py-0.5 rounded-full">Electronics</span>
+                                    <span class="bg-lightBlue px-2 py-0.5 rounded-full ml-1">phones</span>
+                                </h3>
+                                <div class="mt-3 flex items-center justify-between">
+                                    <h4 class="font-light text-gray-500 text-sm flex items-center">
+                                        <i class="fa-sharp fa-solid fa-location-dot"></i>
+                                        <span class="ml-1">Kisumu</span>
+                                    </h4>
+                    
+                                    <h4>
+                                        <i class="fa-sharp fa-regular fa-clock text-customYellow text-sm"></i>
+                                        <span class="ml-1 text-sm font-light text-gray-500">3 hours ago</span>
+                                    </h4>
+                                </div>
+                            </div>
+                            <div class="mt-7">
+                                <a href="#"
+                                    class="bg-lightBlue text-primaryLight font-semiBold rounded-md text-base px-3 py-2 hover:bg-darkBlue">Claim</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="border-2 bg-white drop-shadow border-blue-200 h-fit w-[]">
+                        <div class="relative">
+                            <img src="img/phone-1.jpg" alt="phone-1">
+                            <div class="absolute inset-0 bg-darkBlue bg-opacity-25"></div>
+                        </div>
+                        <div class="px-4 py-6">
+                            <h2 class="text-xl font-semibold uppercase">Microsoft Surface Pro</h2>
+                            <div class="my-5">
+                                <h3 class="text-xs font-light text-primaryLight mt-2">
+                                    <span class="bg-darkBlue px-2 py-0.5 rounded-full">Electronics</span>
+                                    <span class="bg-lightBlue px-2 py-0.5 rounded-full ml-1">phones</span>
+                                </h3>
+                                <div class="mt-3 flex items-center justify-between">
+                                    <h4 class="font-light text-gray-500 text-sm flex items-center">
+                                        <i class="fa-sharp fa-solid fa-location-dot"></i>
+                                        <span class="ml-1">Kisumu</span>
+                                    </h4>
+                    
+                                    <h4>
+                                        <i class="fa-sharp fa-regular fa-clock text-customYellow text-sm"></i>
+                                        <span class="ml-1 text-sm font-light text-gray-500">3 hours ago</span>
+                                    </h4>
+                                </div>
+                            </div>
+                            <div class="mt-7">
+                                <a href="#"
+                                    class="bg-lightBlue text-primaryLight font-semiBold rounded-md text-base px-3 py-2 hover:bg-darkBlue">Claim</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="border-2 bg-white drop-shadow border-blue-200 h-fit w-[]">
+                        <div class="relative">
+                            <img src="img/phone-1.jpg" alt="phone-1">
+                            <div class="absolute inset-0 bg-darkBlue bg-opacity-25"></div>
+                        </div>
+                        <div class="px-4 py-6">
+                            <h2 class="text-xl font-semibold uppercase">Microsoft Surface Pro</h2>
+                            <div class="my-5">
+                                <h3 class="text-xs font-light text-primaryLight mt-2">
+                                    <span class="bg-darkBlue px-2 py-0.5 rounded-full">Electronics</span>
+                                    <span class="bg-lightBlue px-2 py-0.5 rounded-full ml-1">phones</span>
+                                </h3>
+                                <div class="mt-3 flex items-center justify-between">
+                                    <h4 class="font-light text-gray-500 text-sm flex items-center">
+                                        <i class="fa-sharp fa-solid fa-location-dot"></i>
+                                        <span class="ml-1">Kisumu</span>
+                                    </h4>
+                    
+                                    <h4>
+                                        <i class="fa-sharp fa-regular fa-clock text-customYellow text-sm"></i>
+                                        <span class="ml-1 text-sm font-light text-gray-500">3 hours ago</span>
+                                    </h4>
+                                </div>
+                            </div>
+                            <div class="mt-7">
+                                <a href="#"
+                                    class="bg-lightBlue text-primaryLight font-semiBold rounded-md text-base px-3 py-2 hover:bg-darkBlue">Claim</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="border-2 bg-white drop-shadow border-blue-200 h-fit w-[]">
+                        <div class="relative">
+                            <img src="img/phone-1.jpg" alt="phone-1">
+                            <div class="absolute inset-0 bg-darkBlue bg-opacity-25"></div>
+                        </div>
+                        <div class="px-4 py-6">
+                            <h2 class="text-xl font-semibold uppercase">Microsoft Surface Pro</h2>
+                            <div class="my-5">
+                                <h3 class="text-xs font-light text-primaryLight mt-2">
+                                    <span class="bg-darkBlue px-2 py-0.5 rounded-full">Electronics</span>
+                                    <span class="bg-lightBlue px-2 py-0.5 rounded-full ml-1">phones</span>
+                                </h3>
+                                <div class="mt-3 flex items-center justify-between">
+                                    <h4 class="font-light text-gray-500 text-sm flex items-center">
+                                        <i class="fa-sharp fa-solid fa-location-dot"></i>
+                                        <span class="ml-1">Kisumu</span>
+                                    </h4>
+                    
+                                    <h4>
+                                        <i class="fa-sharp fa-regular fa-clock text-customYellow text-sm"></i>
+                                        <span class="ml-1 text-sm font-light text-gray-500">3 hours ago</span>
+                                    </h4>
+                                </div>
+                            </div>
+                            <div class="mt-7">
+                                <a href="#"
+                                    class="bg-lightBlue text-primaryLight font-semiBold rounded-md text-base px-3 py-2 hover:bg-darkBlue">Claim</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="border-2 bg-white drop-shadow border-blue-200 h-fit w-[]">
+                        <div class="relative">
+                            <img src="img/phone-1.jpg" alt="phone-1">
+                            <div class="absolute inset-0 bg-darkBlue bg-opacity-25"></div>
+                        </div>
+                        <div class="px-4 py-6">
+                            <h2 class="text-xl font-semibold uppercase">Microsoft Surface Pro</h2>
+                            <div class="my-5">
+                                <h3 class="text-xs font-light text-primaryLight mt-2">
+                                    <span class="bg-darkBlue px-2 py-0.5 rounded-full">Electronics</span>
+                                    <span class="bg-lightBlue px-2 py-0.5 rounded-full ml-1">phones</span>
+                                </h3>
+                                <div class="mt-3 flex items-center justify-between">
+                                    <h4 class="font-light text-gray-500 text-sm flex items-center">
+                                        <i class="fa-sharp fa-solid fa-location-dot"></i>
+                                        <span class="ml-1">Kisumu</span>
+                                    </h4>
+                    
+                                    <h4>
+                                        <i class="fa-sharp fa-regular fa-clock text-customYellow text-sm"></i>
+                                        <span class="ml-1 text-sm font-light text-gray-500">3 hours ago</span>
+                                    </h4>
+                                </div>
+                            </div>
+                            <div class="mt-7">
+                                <a href="#"
+                                    class="bg-lightBlue text-primaryLight font-semiBold rounded-md text-base px-3 py-2 hover:bg-darkBlue">Claim</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="border-2 bg-white drop-shadow border-blue-200 h-fit w-[]">
+                        <div class="relative">
+                            <img src="img/phone-1.jpg" alt="phone-1">
+                            <div class="absolute inset-0 bg-darkBlue bg-opacity-25"></div>
+                        </div>
+                        <div class="px-4 py-6">
+                            <h2 class="text-xl font-semibold uppercase">Microsoft Surface Pro</h2>
+                            <div class="my-5">
+                                <h3 class="text-xs font-light text-primaryLight mt-2">
+                                    <span class="bg-darkBlue px-2 py-0.5 rounded-full">Electronics</span>
+                                    <span class="bg-lightBlue px-2 py-0.5 rounded-full ml-1">phones</span>
+                                </h3>
+                                <div class="mt-3 flex items-center justify-between">
+                                    <h4 class="font-light text-gray-500 text-sm flex items-center">
+                                        <i class="fa-sharp fa-solid fa-location-dot"></i>
+                                        <span class="ml-1">Kisumu</span>
+                                    </h4>
+                    
+                                    <h4>
+                                        <i class="fa-sharp fa-regular fa-clock text-customYellow text-sm"></i>
+                                        <span class="ml-1 text-sm font-light text-gray-500">3 hours ago</span>
+                                    </h4>
+                                </div>
+                            </div>
+                            <div class="mt-7">
+                                <a href="#"
+                                    class="bg-lightBlue text-primaryLight font-semiBold rounded-md text-base px-3 py-2 hover:bg-darkBlue">Claim</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="border-2 bg-white drop-shadow border-blue-200 h-fit w-[]">
+                        <div class="relative">
+                            <img src="img/phone-1.jpg" alt="phone-1">
+                            <div class="absolute inset-0 bg-darkBlue bg-opacity-25"></div>
+                        </div>
+                        <div class="px-4 py-6">
+                            <h2 class="text-xl font-semibold uppercase">Microsoft Surface Pro</h2>
+                            <div class="my-5">
+                                <h3 class="text-xs font-light text-primaryLight mt-2">
+                                    <span class="bg-darkBlue px-2 py-0.5 rounded-full">Electronics</span>
+                                    <span class="bg-lightBlue px-2 py-0.5 rounded-full ml-1">phones</span>
+                                </h3>
+                                <div class="mt-3 flex items-center justify-between">
+                                    <h4 class="font-light text-gray-500 text-sm flex items-center">
+                                        <i class="fa-sharp fa-solid fa-location-dot"></i>
+                                        <span class="ml-1">Kisumu</span>
+                                    </h4>
+                    
+                                    <h4>
+                                        <i class="fa-sharp fa-regular fa-clock text-customYellow text-sm"></i>
+                                        <span class="ml-1 text-sm font-light text-gray-500">3 hours ago</span>
+                                    </h4>
+                                </div>
+                            </div>
+                            <div class="mt-7">
+                                <a href="#"
+                                    class="bg-lightBlue text-primaryLight font-semiBold rounded-md text-base px-3 py-2 hover:bg-darkBlue">Claim</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="border-2 bg-white drop-shadow border-blue-200 h-fit w-[]">
+                        <div class="relative">
+                            <img src="img/phone-1.jpg" alt="phone-1">
+                            <div class="absolute inset-0 bg-darkBlue bg-opacity-25"></div>
+                        </div>
+                        <div class="px-4 py-6">
+                            <h2 class="text-xl font-semibold uppercase">Microsoft Surface Pro</h2>
+                            <div class="my-5">
+                                <h3 class="text-xs font-light text-primaryLight mt-2">
+                                    <span class="bg-darkBlue px-2 py-0.5 rounded-full">Electronics</span>
+                                    <span class="bg-lightBlue px-2 py-0.5 rounded-full ml-1">phones</span>
+                                </h3>
+                                <div class="mt-3 flex items-center justify-between">
+                                    <h4 class="font-light text-gray-500 text-sm flex items-center">
+                                        <i class="fa-sharp fa-solid fa-location-dot"></i>
+                                        <span class="ml-1">Kisumu</span>
+                                    </h4>
+                    
+                                    <h4>
+                                        <i class="fa-sharp fa-regular fa-clock text-customYellow text-sm"></i>
+                                        <span class="ml-1 text-sm font-light text-gray-500">3 hours ago</span>
+                                    </h4>
+                                </div>
+                            </div>
+                            <div class="mt-7">
+                                <a href="#"
+                                    class="bg-lightBlue text-primaryLight font-semiBold rounded-md text-base px-3 py-2 hover:bg-darkBlue">Claim</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="border-2 bg-white drop-shadow border-blue-200">
-                    <div class="relative">
-                        <img src="img/phone-1.jpg" alt="phone-1">
-                        <div class="absolute inset-0 bg-darkBlue bg-opacity-25"></div>
-                    </div>
-                    <div class="px-4 py-6">
-                        <h2 class="text-xl font-semibold uppercase">Microsoft Surface Pro</h2>
-                        <div class="my-5">
-                            <h3 class="text-xs font-light text-primaryLight mt-2">
-                                <span class="bg-darkBlue px-2 py-0.5 rounded-full">Electronics</span> 
-                                <span class="bg-lightBlue px-2 py-0.5 rounded-full ml-1">phones</span>
-                            </h3>
-                            <h4 class="mt-2 font-light text-gray-500 text-lg">Kisumu</h4>
-                        </div>
-                        <div class="mt-7">
-                            <a href="#" class="bg-lightBlue text-primaryLight font-semiBold rounded-md text-lg px-3 py-2 hover:bg-darkBlue">Claim</a>
-                        </div>
-                    </div>
+
+                <div class="mt-10 flex items-center justify-center">
+                    <a href="#" class="bg-customYellow text-darkBlue px-3 py-2 hover:bg-darkBlue hover:text-customYellow">View More</a>
                 </div>
-                <div class="border-2 bg-white drop-shadow border-blue-200">
-                    <div class="relative">
-                        <img src="img/phone-1.jpg" alt="phone-1">
-                        <div class="absolute inset-0 bg-darkBlue bg-opacity-25"></div>
-                    </div>
-                    <div class="px-4 py-6">
-                        <h2 class="text-xl font-semibold uppercase">Microsoft Surface Pro</h2>
-                        <div class="my-5">
-                            <h3 class="text-xs font-light text-primaryLight mt-2">
-                                <span class="bg-darkBlue px-2 py-0.5 rounded-full">Electronics</span> 
-                                <span class="bg-lightBlue px-2 py-0.5 rounded-full ml-1">phones</span>
-                            </h3>
-                            <h4 class="mt-2 font-light text-gray-500 text-lg">Kisumu</h4>
-                        </div>
-                        <div class="mt-7">
-                            <a href="#" class="bg-lightBlue text-primaryLight font-semiBold rounded-md text-lg px-3 py-2 hover:bg-darkBlue">Claim</a>
-                        </div>
-                    </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-fixed" style="background-image: url('img/testimonials/testimonials_banner.jpg'); background-position: center; object-fit: cover; background-repeat: no-repeat;">
+        <div class="bg-lightBlue p-10 bg-opacity-70">
+            <div class="container">
+                <div class="text-center">
+                    <h3 class="text-white font-bold text-4xl">Success Stories</h3>
                 </div>
-                <div class="border-2 bg-white drop-shadow border-blue-200">
-                    <div class="relative">
-                        <img src="img/phone-1.jpg" alt="phone-1">
-                        <div class="absolute inset-0 bg-darkBlue bg-opacity-25"></div>
-                    </div>
-                    <div class="px-4 py-6">
-                        <h2 class="text-xl font-semibold uppercase">Microsoft Surface Pro</h2>
-                        <div class="my-5">
-                            <h3 class="text-xs font-light text-primaryLight mt-2">
-                                <span class="bg-darkBlue px-2 py-0.5 rounded-full">Electronics</span> 
-                                <span class="bg-lightBlue px-2 py-0.5 rounded-full ml-1">phones</span>
-                            </h3>
-                            <h4 class="mt-2 font-light text-gray-500 text-lg">Kisumu</h4>
-                        </div>
-                        <div class="mt-7">
-                            <a href="#" class="bg-lightBlue text-primaryLight font-semiBold rounded-md text-lg px-3 py-2 hover:bg-darkBlue">Claim</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="border-2 bg-white drop-shadow border-blue-200">
-                    <div class="relative">
-                        <img src="img/phone-1.jpg" alt="phone-1">
-                        <div class="absolute inset-0 bg-darkBlue bg-opacity-25"></div>
-                    </div>
-                    <div class="px-4 py-6">
-                        <h2 class="text-xl font-semibold uppercase">Microsoft Surface Pro</h2>
-                        <div class="my-5">
-                            <h3 class="text-xs font-light text-primaryLight mt-2">
-                                <span class="bg-darkBlue px-2 py-0.5 rounded-full">Electronics</span> 
-                                <span class="bg-lightBlue px-2 py-0.5 rounded-full ml-1">phones</span>
-                            </h3>
-                            <h4 class="mt-2 font-light text-gray-500 text-lg">Kisumu</h4>
-                        </div>
-                        <div class="mt-7">
-                            <a href="#" class="bg-lightBlue text-primaryLight font-semiBold rounded-md text-lg px-3 py-2 hover:bg-darkBlue">Claim</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="border-2 bg-white drop-shadow border-blue-200">
-                    <div class="relative">
-                        <img src="img/phone-1.jpg" alt="phone-1">
-                        <div class="absolute inset-0 bg-darkBlue bg-opacity-25"></div>
-                    </div>
-                    <div class="px-4 py-6">
-                        <h2 class="text-xl font-semibold uppercase">Microsoft Surface Pro</h2>
-                        <div class="my-5">
-                            <h3 class="text-xs font-light text-primaryLight mt-2">
-                                <span class="bg-darkBlue px-2 py-0.5 rounded-full">Electronics</span> 
-                                <span class="bg-lightBlue px-2 py-0.5 rounded-full ml-1">phones</span>
-                            </h3>
-                            <h4 class="mt-2 font-light text-gray-500 text-lg">Kisumu</h4>
-                        </div>
-                        <div class="mt-7">
-                            <a href="#" class="bg-lightBlue text-primaryLight font-semiBold rounded-md text-lg px-3 py-2 hover:bg-darkBlue">Claim</a>
+                <div class="splide mt-10 pb-10">
+                    <div class="splide__track">
+                        <div class="splide__list">
+                            <div class="splide__slide bg-primaryLight rounded border-2 border-blue-200 px-6 py-4">
+                                <div class="text-center">
+                                    <i class="fa-sharp fa-solid fa-quote-left text-5xl font-bold text-customYellow"></i>
+                                </div>
+                                <div class="my-4 text-center">
+                                    <p class="text-lg font-light">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos voluptate porro nam
+                                        obcaecati impedit ipsam debitis facilis, saepe similique corporis.</p>
+                                </div>
+                                <div class="mt-8 flex items-center justify-center space-x-8">
+                                    <div class="w-[25%]">
+                                        <img src="img/testimonials/testimonial-avatar.jpg" alt="testimonial-avatar" class="w-full rounded-full">
+                                    </div>
+                                    <div>
+                                        <h3 class="text-xl">Robert Achieng</h3>
+                                        <h6 class="text-sm font-light">Kisumu</h6>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="splide__slide bg-primaryLight rounded border-2 border-blue-200 px-6 py-4">
+                                <div class="text-center">
+                                    <i class="fa-sharp fa-solid fa-quote-left text-5xl font-bold text-customYellow"></i>
+                                </div>
+                                <div class="my-4 text-center">
+                                    <p class="text-lg font-light">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos voluptate porro nam
+                                        obcaecati impedit ipsam debitis facilis, saepe similique corporis.</p>
+                                </div>
+                                <div class="mt-8 flex items-center justify-center space-x-8">
+                                    <div class="w-[25%]">
+                                        <img src="img/testimonials/testimonial-avatar.jpg" alt="testimonial-avatar" class="w-full rounded-full">
+                                    </div>
+                                    <div>
+                                        <h3 class="text-xl">Robert Achieng</h3>
+                                        <h6 class="text-sm font-light">Kisumu</h6>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="splide__slide bg-primaryLight rounded border-2 border-blue-200 px-6 py-4">
+                                <div class="text-center">
+                                    <i class="fa-sharp fa-solid fa-quote-left text-5xl font-bold text-customYellow"></i>
+                                </div>
+                                <div class="my-4 text-center">
+                                    <p class="text-lg font-light">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos voluptate porro nam
+                                        obcaecati impedit ipsam debitis facilis, saepe similique corporis.</p>
+                                </div>
+                                <div class="mt-8 flex items-center justify-center space-x-8">
+                                    <div class="w-[25%]">
+                                        <img src="img/testimonials/testimonial-avatar.jpg" alt="testimonial-avatar" class="w-full rounded-full">
+                                    </div>
+                                    <div>
+                                        <h3 class="text-xl">Robert Achieng</h3>
+                                        <h6 class="text-sm font-light">Kisumu</h6>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="splide__slide bg-primaryLight rounded border-2 border-blue-200 px-6 py-4">
+                                <div class="text-center">
+                                    <i class="fa-sharp fa-solid fa-quote-left text-5xl font-bold text-customYellow"></i>
+                                </div>
+                                <div class="my-4 text-center">
+                                    <p class="text-lg font-light">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos voluptate porro nam
+                                        obcaecati impedit ipsam debitis facilis, saepe similique corporis.</p>
+                                </div>
+                                <div class="mt-8 flex items-center justify-center space-x-8">
+                                    <div class="w-[25%]">
+                                        <img src="img/testimonials/testimonial-avatar.jpg" alt="testimonial-avatar" class="w-full rounded-full">
+                                    </div>
+                                    <div>
+                                        <h3 class="text-xl">Robert Achieng</h3>
+                                        <h6 class="text-sm font-light">Kisumu</h6>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="splide__slide bg-primaryLight rounded border-2 border-blue-200 px-6 py-4">
+                                <div class="text-center">
+                                    <i class="fa-sharp fa-solid fa-quote-left text-5xl font-bold text-customYellow"></i>
+                                </div>
+                                <div class="my-4 text-center">
+                                    <p class="text-lg font-light">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos voluptate porro nam
+                                        obcaecati impedit ipsam debitis facilis, saepe similique corporis.</p>
+                                </div>
+                                <div class="mt-8 flex items-center justify-center space-x-8">
+                                    <div class="w-[25%]">
+                                        <img src="img/testimonials/testimonial-avatar.jpg" alt="testimonial-avatar" class="w-full rounded-full">
+                                    </div>
+                                    <div>
+                                        <h3 class="text-xl">Robert Achieng</h3>
+                                        <h6 class="text-sm font-light">Kisumu</h6>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="splide__slide bg-primaryLight rounded border-2 border-blue-200 px-6 py-4">
+                                <div class="text-center">
+                                    <i class="fa-sharp fa-solid fa-quote-left text-5xl font-bold text-customYellow"></i>
+                                </div>
+                                <div class="my-4 text-center">
+                                    <p class="text-lg font-light">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos voluptate porro nam
+                                        obcaecati impedit ipsam debitis facilis, saepe similique corporis.</p>
+                                </div>
+                                <div class="mt-8 flex items-center justify-center space-x-8">
+                                    <div class="w-[25%]">
+                                        <img src="img/testimonials/testimonial-avatar.jpg" alt="testimonial-avatar" class="w-full rounded-full">
+                                    </div>
+                                    <div>
+                                        <h3 class="text-xl">Robert Achieng</h3>
+                                        <h6 class="text-sm font-light">Kisumu</h6>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="splide__slide bg-primaryLight rounded border-2 border-blue-200 px-6 py-4">
+                                <div class="text-center">
+                                    <i class="fa-sharp fa-solid fa-quote-left text-5xl font-bold text-customYellow"></i>
+                                </div>
+                                <div class="my-4 text-center">
+                                    <p class="text-lg font-light">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos voluptate porro nam
+                                        obcaecati impedit ipsam debitis facilis, saepe similique corporis.</p>
+                                </div>
+                                <div class="mt-8 flex items-center justify-center space-x-8">
+                                    <div class="w-[25%]">
+                                        <img src="img/testimonials/testimonial-avatar.jpg" alt="testimonial-avatar" class="w-full rounded-full">
+                                    </div>
+                                    <div>
+                                        <h3 class="text-xl">Robert Achieng</h3>
+                                        <h6 class="text-sm font-light">Kisumu</h6>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="splide__slide bg-primaryLight rounded border-2 border-blue-200 px-6 py-4">
+                                <div class="text-center">
+                                    <i class="fa-sharp fa-solid fa-quote-left text-5xl font-bold text-customYellow"></i>
+                                </div>
+                                <div class="my-4 text-center">
+                                    <p class="text-lg font-light">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos voluptate porro nam
+                                        obcaecati impedit ipsam debitis facilis, saepe similique corporis.</p>
+                                </div>
+                                <div class="mt-8 flex items-center justify-center space-x-8">
+                                    <div class="w-[25%]">
+                                        <img src="img/testimonials/testimonial-avatar.jpg" alt="testimonial-avatar" class="w-full rounded-full">
+                                    </div>
+                                    <div>
+                                        <h3 class="text-xl">Robert Achieng</h3>
+                                        <h6 class="text-sm font-light">Kisumu</h6>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -407,18 +747,7 @@
 
 
     <footer class="bg-darkBlue py-10 px-5">
-        <div class="container">
-            <div class=" w-[25%]">
-                <div class="bg-primaryLight rounded w-[90%]">
-                    <img src="img/logo.png" alt="" class="w-full rounded">
-                </div>
-                <div class="mt-4">
-                    <p class="text-primaryLight font-light">
-                        At Lostify, we are driven by a simple yet powerful mission: to bring lost items back to their rightful owners and spark moments of joy through reunions. Our platform serves as a digital haven for those seeking to retrieve their cherished belongings and for the kind souls who discover lost treasures.
-                    </p>
-                </div>
-            </div>
-        </div>
+        
     </footer>
 
 
@@ -428,40 +757,17 @@
     <!-- custom javascript -->
     <script src="js/main.js" defer></script>
 
-    <!-- tailwindcss config -->
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primaryLight: '#f4f9fc',
-                        darkBlue: '#101c42',
-                        customYellow: '#f6a530',
-                        lightBlue: '#00bbde'
-                    },
-                    container: {
-                        center: true,
-                    }
-                },
-                fontFamily: {
-                    body: ['Poppins', 'Roboto', 'sans-serif']
-                }
-            }
-        }
-    </script>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
 
+    <!-- tailwindcss config -->
+    <script src="config/tailwind.js"></script>
+    
+    <!-- splide-js -->
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <script src="config/splide.js"></script>
 
     <!-- alpine-js -->
     <script src="https://unpkg.com/alpinejs" defer></script>
-
-    <!-- jquery -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"
-        integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-    <!-- axios -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js"
-        integrity="sha512-uMtXmF28A2Ab/JJO2t/vYhlaa/3ahUOgj1Zf27M5rOo8/+fcTUVH0/E0ll68njmjrLqOBjXM3V9NiPFL5ywWPQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </body>
 </html>
